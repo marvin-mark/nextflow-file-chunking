@@ -1,9 +1,7 @@
-fastq_files_ch = Channel.fromPath(params.input)
+vcf_files = "/home/marvin/Documents/nf-file-chunking/nextflow-file-chunking/test-data/dataSmall.vcf"
 
-include { RUN_FASTP } from '../modules/local/fastp'
-include { RUN_MULTIQC } from '../modules/local/multiqc'
+include { RUN_CHUNKER } from '../modules/local/chunker'
 
 workflow NF_PREPROCESS {
-    RUN_FASTP ( fastq_files_ch )
-    RUN_MULTIQC ( RUN_FASTP.out.fastp_json.collect() )
+        RUN_CHUNKER(vcf_files)
     }
