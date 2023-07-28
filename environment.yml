@@ -5,6 +5,3 @@ channels:
   - defaults
   - bioconda
   - conda-forge
-dependencies:
-  - fastp
-  - multiqc
