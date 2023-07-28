@@ -1,4 +1,4 @@
-process RUN_MERGE {    
+process RUN_BCFTOOLS {    
   publishDir "output", mode: 'symlink'
   input:
 	  path manifests
@@ -6,6 +6,6 @@ process RUN_MERGE {
     path "manifest.txt"
 		
 	"""
-    awk 'NR == 1 || FNR > 1'  ${manifests} > manifest.txt
-  """
+    
+    """
 }
