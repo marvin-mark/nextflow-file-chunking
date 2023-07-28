@@ -1,9 +1,11 @@
 process RUN_MERGE {    
+  publishDir "outputs", mode: 'symlink'
   input:
-	  //TODO: inputs definieren
+	  path manifests
   output:
+    path "manifest.txt"
 		
 	"""
-        //TODO: files zusammenfügen nur mit einem header
-    """
+    awk 'NR == 1 || FNR > 1'  ${manifests} > manifest.txt
+  """
 }

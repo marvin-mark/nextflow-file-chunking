@@ -4,9 +4,10 @@ process RUN_CHUNKER {
 	  val chunksize
 	  val strategy
   output:
-		
+	path "*.txt"
+	
+	script:
 	"""
-	mkdir test
-	 java -jar /home/marvin/Desktop/genomic-utils.jar file-chunking  --output ${input.baseName}_out --chunksize ${chunksize} --strategy ${strategy} --output-dir test ${input}
+		java -jar /home/marvin/Desktop/genomic-utils.jar file-chunking  ${input} --output Manifest${input.baseName}.txt --chunksize ${chunksize} --strategy ${strategy}
 	"""
 }
