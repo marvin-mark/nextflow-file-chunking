@@ -30,7 +30,7 @@ $PATH not set:
 ```
 sudo ./nextflow run main.nf -profile docker,test 
 ```
-if the $PATH is not set the you need the correct path for your nextflow installation ("./" is in the current directory)
+if the $PATH is not set the you need the correct path for your nextflow installation (e.g. "./" is in the current directory)
 
 ## Contact
 * [Marvin Mark](mailto:marvin.mark@gmx.at)
